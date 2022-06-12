@@ -39,6 +39,6 @@ const jsonData = JSON.stringify(data, null, 2);
 
 console.log("Writing to JSON data to file");
 
-fs.writeFileSync(`${dir}/chartData.json`, jsonData);
+fs.writeFileSync(`${dir}/siteData.json`, jsonData);
 
 console.log("File write complete!!");
