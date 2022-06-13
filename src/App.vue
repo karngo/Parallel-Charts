@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main class="yellow lighten-3">
-      <v-container>
+      <v-container class="pb-10">
         <v-row>
           <v-col class="text-center">
             <h2>Parallel Charts</h2>
