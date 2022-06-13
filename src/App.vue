@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main>
+    <v-main class="yellow lighten-3">
       <v-container>
         <v-row>
           <v-col class="text-center">
