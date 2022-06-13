@@ -3,7 +3,7 @@
     <v-main>
       <v-container>
         <v-row>
-          <v-col>
+          <v-col class="text-center">
             <h2>Parallel Charts</h2>
           </v-col>
         </v-row>
