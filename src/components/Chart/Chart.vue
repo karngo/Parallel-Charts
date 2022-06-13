@@ -1,5 +1,6 @@
 <template>
   <v-card v-if="chartId">
+    <v-card-title v-if="title"> {{ title }} </v-card-title>
     <v-card-text>
       <div :id="chartId" ref="chartContainer"></div>
     </v-card-text>
@@ -19,6 +20,7 @@ export default {
     type: String,
     xlabel: String,
     ylabel: String,
+    title: String,
   },
   data() {
     return {

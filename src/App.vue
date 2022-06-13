@@ -10,6 +10,7 @@
         <v-row>
           <v-col>
             <Chart
+              title="Page Views"
               chartId="barChart"
               type="bar"
               :categories="pageTitles"
@@ -23,6 +24,7 @@
         <v-row>
           <v-col>
             <Chart
+              title="Site Views"
               chartId="lineChart"
               type="line"
               :categories="timeline"
