@@ -9,30 +9,12 @@
         </v-row>
         <v-row>
           <v-col>
-            <Chart
-              title="Page Views"
-              chartId="barChart"
-              type="bar"
-              :categories="pageTitles"
-              :chartData="pageVisits"
-              dataLabel="2022-01-01"
-              xlabel="Page Titles"
-              ylabel="Number of Views"
-            />
+            <PageViewChart />
           </v-col>
         </v-row>
         <v-row>
           <v-col>
-            <Chart
-              title="Site Views"
-              chartId="lineChart"
-              type="line"
-              :categories="timeline"
-              :chartData="siteViews"
-              dataLabel="Site Views"
-              xlabel="Time (24hrs)"
-              ylabel="Number of Views"
-            />
+            <SiteViewChart />
           </v-col>
         </v-row>
       </v-container>
@@ -40,21 +22,17 @@
   </v-app>
 </template>
 <script>
-import { pageTitles, pageVisits, timeline, siteViews } from "./util/chartData";
-import Chart from "./components/Chart/Chart.vue";
+import PageViewChart from "./views/PageViewChart.vue";
+import SiteViewChart from "./views/SiteViewsChart.vue";
 
 export default {
   name: "App",
   components: {
-    Chart,
+    PageViewChart,
+    SiteViewChart,
   },
   data() {
-    return {
-      pageTitles,
-      pageVisits,
-      timeline,
-      siteViews,
-    };
+    return {};
   },
 };
 </script>
