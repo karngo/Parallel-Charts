@@ -1,5 +1,8 @@
 # parallel-charts
 
+## Project preview
+![App Preview](/public/preview.png)
+
 ## Project setup
 ```
 npm install
@@ -19,6 +22,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
