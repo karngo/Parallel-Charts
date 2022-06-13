@@ -35,13 +35,13 @@ export default {
   computed: {
     chartConfig() {
       const type = this.type || "bar";
-      const catagories = this.catagories || [];
+      const categories = this.categories || [];
       const chartData = this.chartData || [];
       const dataLabel = this.dataLabel || "Data";
 
       return {
         type,
-        catagories,
+        categories,
         chartData: [dataLabel, ...chartData],
         xlabel: this.xlabel,
         ylabel: this.ylabel,

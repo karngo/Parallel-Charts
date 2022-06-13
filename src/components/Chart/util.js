@@ -55,7 +55,7 @@ const getDefaultConfig = (type) => {
 };
 
 const generateChart = ({
-  catagories = [],
+  categories = [],
   chartData = [],
   xlabel,
   ylabel,
@@ -78,7 +78,7 @@ const generateChart = ({
           label: {
             text: xlabel,
           },
-          categories: catagories,
+          categories,
         },
         y: {
           label: {
