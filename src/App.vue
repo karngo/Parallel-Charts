@@ -7,103 +7,48 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-card>
-          <v-card-text>
-            <div id="barChart"></div>
-          </v-card-text>
-        </v-card>
+        <Chart
+          chartId="barChart"
+          type="bar"
+          :categories="pageTitles"
+          :chartData="pageVisits"
+          dataLabel="2022-01-01"
+          xlabel="Page Titles"
+          ylabel="Number of Views"
+        />
       </v-col>
     </v-row>
     <v-row>
       <v-col>
-        <v-card>
-          <v-card-text>
-            <div id="lineChart"></div>
-          </v-card-text>
-        </v-card>
+        <Chart
+          chartId="lineChart"
+          type="line"
+          :categories="timeline"
+          :chartData="siteViews"
+          dataLabel="Site Views"
+          xlabel="Time (24hrs)"
+          ylabel="Number of Views"
+        />
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
-import bb, { bar, line } from "billboard.js";
-import "billboard.js/dist/billboard.css";
 import { pageTitles, pageVisits, timeline, siteViews } from "./util/chartData";
+import Chart from "./components/Chart/Chart.vue";
 
-const barConfig = {
-  bindto: "#barChart",
-  data: {
-    type: bar(),
-    columns: [["2022-01-01", ...pageVisits]],
-  },
-  bar: {
-    width: {
-      ratio: 0.3,
-    },
-    padding: 0.1,
-  },
-  axis: {
-    x: {
-      label: {
-        text: "Page Title",
-        position: "outer-center",
-      },
-      type: "category",
-      categories: pageTitles,
-    },
-    y: {
-      label: {
-        text: "Number of Views",
-        position: "outer-middle",
-      },
-    },
-  },
-  grid: {
-    y: {
-      show: true,
-    },
-  },
-};
-
-const lineConfig = {
-  bindto: "#lineChart",
-  data: {
-    type: line(),
-    columns: [["2022-01-01", ...siteViews]],
-  },
-  axis: {
-    x: {
-      label: {
-        text: "Time",
-        position: "outer-center",
-      },
-      type: "category",
-      categories: timeline,
-    },
-    y: {
-      label: {
-        text: "Number of Views",
-        position: "outer-middle",
-      },
-    },
-  },
-  grid: {
-    y: {
-      show: true,
-    },
-  },
-};
 export default {
   name: "App",
+  components: {
+    Chart,
+  },
   data() {
     return {
-      barChart: null,
-      lineChart: null,
+      pageTitles,
+      pageVisits,
+      timeline,
+      siteViews,
     };
-  },
-  mounted() {
-    this.barChart = bb.generate(barConfig);
-    this.lineChart = bb.generate(lineConfig);
   },
 };
 </script>
