@@ -1,6 +1,6 @@
 <template>
   <v-card v-if="chartId">
-    <v-card-title v-if="title"> {{ title }} </v-card-title>
+    <v-card-title v-if="title" class="justify-end"> {{ title }} </v-card-title>
     <v-card-text>
       <div :id="chartId" ref="chartContainer"></div>
     </v-card-text>
